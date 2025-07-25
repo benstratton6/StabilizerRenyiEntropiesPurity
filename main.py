@@ -654,15 +654,15 @@ thetas = np.linspace(0, np.pi, data_points)
 eplisionError = [error/2 for el in thetas]
 
 
-# Simulation
+# Run Simulations
 
-# methods_2 = [M_alpha_caculator_qubits(el, 2, shot_number=shots_base*2) for el in thetas]
-# methods_3 = [M_alpha_caculator_qubits(el, 3, shot_number=shots_base*3) for el in thetas]
-# methods_5 = [M_alpha_caculator_qubits(el, 5, shot_number=shots_base*5) for el in thetas]
-# methods_7 = [M_alpha_caculator_qubits(el, 7, shot_number=shots_base*7) for el in thetas]
+methods_2 = [M_alpha_caculator_qubits(el, 2, shot_number=shots_base*2) for el in thetas]
+methods_3 = [M_alpha_caculator_qubits(el, 3, shot_number=shots_base*3) for el in thetas]
+methods_5 = [M_alpha_caculator_qubits(el, 5, shot_number=shots_base*5) for el in thetas]
+methods_7 = [M_alpha_caculator_qubits(el, 7, shot_number=shots_base*7) for el in thetas]
 
 
-# Theory
+# Collect Theory Data 
 
 methods_theory_2 = [caculate_M_alpha(el, 2) for el in thetas]
 methods_theory_3 = [caculate_M_alpha(el, 3) for el in thetas]
@@ -671,24 +671,20 @@ methods_theory_7 = [caculate_M_alpha(el, 7) for el in thetas]
 
 # Save Data
 
-with open("./data/methods_theory_2.json", 'w') as f:
-    # indent=2 is not needed but makes the file human-readable
-    # if the data is nested
-    json.dump(methods_theory_2, f, indent=2)
+# with open("./data/methods_theory_2.json", 'w') as f:
 
-with open("./data/methods_theory_3.json", 'w') as f:
-    # indent=2 is not needed but makes the file human-readable
-    # if the data is nested
-    json.dump(methods_theory_3, f, indent=2)
+#     json.dump(methods_theory_2, f, indent=2)
 
-with open("./data/methods_theory_5.json", 'w') as f:
-    # indent=2 is not needed but makes the file human-readable
-    # if the data is nested
-    json.dump(methods_theory_5, f, indent=2)
+# with open("./data/methods_theory_3.json", 'w') as f:
 
-with open("./data/methods_theory_7.json", 'w') as f:
-    # indent=2 is not needed but makes the file human-readable
-    # if the data is nested
-    json.dump(methods_theory_7, f, indent=2)
+#     json.dump(methods_theory_3, f, indent=2)
+
+# with open("./data/methods_theory_5.json", 'w') as f:
+
+#     json.dump(methods_theory_5, f, indent=2)
+
+# with open("./data/methods_theory_7.json", 'w') as f:
+
+#     json.dump(methods_theory_7, f, indent=2)
 
 
